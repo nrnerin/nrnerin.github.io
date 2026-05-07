@@ -4,142 +4,392 @@
     <title>Nurin Syazwani Portfolio</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7ff;
-            color: #222;
-        }
-
-        header {
-            background: linear-gradient(135deg, #6C63FF, #4D96FF);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0f1020;
             color: white;
-            text-align: center;
-            padding: 70px 20px;
         }
 
-        header h1 {
-            font-size: 45px;
-            margin-bottom: 10px;
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(15, 16, 32, 0.85);
+            backdrop-filter: blur(12px);
         }
 
-        header h2 {
-            font-weight: normal;
+        nav h2 {
+            margin: 0;
+            color: #ffb6d9;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ffb6d9;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            align-items: center;
+            gap: 40px;
+            padding: 60px 8%;
+            background:
+                radial-gradient(circle at top left, rgba(255,182,217,0.25), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(108,99,255,0.25), transparent 35%);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 16px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 30px;
+            color: #ffb6d9;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .hero h1 span {
+            color: #ffb6d9;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #d6d6e7;
+            line-height: 1.7;
+            max-width: 620px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            margin-right: 12px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #ffb6d9;
+            color: #0f1020;
+        }
+
+        .secondary {
+            border: 1px solid #ffb6d9;
+            color: #ffb6d9;
+        }
+
+        .profile-card {
+            min-height: 390px;
+            border-radius: 35px;
+            background: linear-gradient(145deg, #ffb6d9, #8c7bff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 60px rgba(255,182,217,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+
+        .profile-card .emoji {
+            font-size: 95px;
+            z-index: 1;
         }
 
         section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
+            padding: 75px 8%;
         }
 
-        h2 {
-            color: #6C63FF;
+        .section-title {
+            font-size: 36px;
+            color: #ffb6d9;
+            margin-bottom: 15px;
         }
 
-        .project-card {
-            background: white;
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .section-subtitle {
+            color: #bfc0d9;
+            max-width: 750px;
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
 
-        .project-card:hover {
-            transform: scale(1.02);
+        .about-box {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 25px;
+            padding: 30px;
+            line-height: 1.8;
+            color: #d6d6e7;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 28px;
+            padding: 28px;
             transition: 0.3s;
+            min-height: 260px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.13);
+        }
+
+        .card .icon {
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #d6d6e7;
+            line-height: 1.6;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 5px 5px 0 0;
+            background: rgba(255,182,217,0.18);
+            color: #ffb6d9;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .skills span {
-            display: inline-block;
-            background: #6C63FF;
-            color: white;
-            padding: 10px 15px;
-            margin: 8px;
-            border-radius: 20px;
+            padding: 12px 18px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 22px;
+            color: #f4f4ff;
+        }
+
+        .contact-box {
+            background: linear-gradient(145deg, rgba(255,182,217,0.18), rgba(140,123,255,0.18));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 28px;
+            padding: 30px;
+            line-height: 1.9;
+        }
+
+        .contact-box a {
+            color: #ffb6d9;
+            text-decoration: none;
         }
 
         footer {
             text-align: center;
-            background: #222;
-            color: white;
-            padding: 25px;
+            padding: 30px;
+            color: #aaa;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Hi, I'm Nurin Syazwani 👋</h1>
-        <h2>Software Engineering Multimedia Development Student</h2>
-        <p>I create interactive digital experiences through software, multimedia, UI/UX, and AR development.</p>
-    </header>
+    <nav>
+        <h2>Nurin.dev</h2>
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I am a Software Engineering (Multimedia Systems Development) student at Universiti Kebangsaan Malaysia (UKM).
-            I am interested in building user-friendly applications, interactive systems, and multimedia-based solutions.
+    <div class="hero">
+        <div>
+            <span class="badge">Multimedia Systems Development Student</span>
+            <h1>Hi, I'm <span>Nurin Syazwani</span> 👋</h1>
+            <p>
+                I design and build interactive digital experiences through software,
+                multimedia, UI/UX, mobile concepts, and AR development.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="emoji">👩‍💻</div>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+            I enjoy combining creativity and technology to create useful systems with
+            good user experience.
         </p>
-    </section>
 
-    <section>
-        <h2>Projects</h2>
-
-        <div class="project-card">
-            <h3>E-SMASH Indoor Sports Booking System</h3>
-            <p>
-                A sports facility booking system designed to help users reserve indoor sports courts more easily.
-            </p>
-            <p><strong>Focus:</strong> System Design, Booking Workflow, UI/UX</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Campus Cent</h3>
-            <p>
-                A student budget management app designed to help university students track expenses and manage spending habits.
-            </p>
-            <p><strong>Focus:</strong> Mobile App Concept, Finance Tracking, UI/UX</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Eco-Rangers AR</h3>
-            <p>
-                An AR educational application using Unity to create interactive learning experiences for children.
-            </p>
-            <p><strong>Focus:</strong> AR Development, Unity, Multimedia Learning</p>
+        <div class="about-box">
+            I am a Software Engineering (Multimedia Systems Development) student at
+            Universiti Kebangsaan Malaysia (UKM). My interests include user-friendly
+            applications, interactive systems, multimedia-based solutions, AR development,
+            and UI/UX design.
         </div>
     </section>
 
-    <section>
-        <h2>Skills</h2>
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+            A selection of student projects focused on practical systems, student needs,
+            and interactive learning experiences.
+        </p>
+
+        <div class="projects">
+
+            <div class="card">
+                <div class="icon">💸</div>
+                <h3>Campus Cent</h3>
+                <p>
+                    A student budget management app designed to help university students
+                    track expenses and manage spending habits.
+                </p>
+                <span class="tag">Mobile Concept</span>
+                <span class="tag">Finance Tracking</span>
+                <span class="tag">UI/UX</span>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏸</div>
+                <h3>E-SMASH</h3>
+                <p>
+                    An indoor sports booking system designed to help users reserve sports
+                    courts and manage booking schedules more easily.
+                </p>
+                <span class="tag">Booking System</span>
+                <span class="tag">System Design</span>
+                <span class="tag">UI/UX</span>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌱</div>
+                <h3>Eco-Rangers AR</h3>
+                <p>
+                    An AR educational application using Unity to create interactive learning
+                    experiences for children.
+                </p>
+                <span class="tag">Unity</span>
+                <span class="tag">AR Development</span>
+                <span class="tag">Multimedia Learning</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">
+            Technical and creative skills related to software engineering and multimedia systems.
+        </p>
 
         <div class="skills">
             <span>Java</span>
             <span>Python</span>
             <span>Unity</span>
-            <span>UI/UX Design</span>
             <span>HTML</span>
             <span>CSS</span>
+            <span>PHP</span>
             <span>MySQL</span>
             <span>Firebase</span>
             <span>Android Studio</span>
+            <span>UI/UX Design</span>
             <span>Web Design</span>
             <span>Mobile Design</span>
-            <span>PHP</span>
         </div>
     </section>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: nrnerin@gmail.com</p>
-        <p>GitHub: github.com/nrnerin</p>
-        <p>LinkedIn: linkedin.com/in/nurin-syazwani-a-8173322ba/</p>
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-box">
+            <p>Email: <a href="mailto:nrnerin@gmail.com">nrnerin@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/nrnerin">github.com/nrnerin</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/nurin-syazwani-a-8173322ba/">linkedin.com/in/nurin-syazwani-a-8173322ba/</a></p>
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 Nurin Syazwani | Software Engineering Portfolio</p>
+        <p>© 2026 Nurin Syazwani — Portfolio Unlocked ✨</p>
     </footer>
 
 </body>
