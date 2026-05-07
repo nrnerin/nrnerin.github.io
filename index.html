@@ -2,39 +2,139 @@
 <html>
 <head>
     <title>Nurin Syazwani Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6C63FF, #4D96FF);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-weight: normal;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #6C63FF;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #6C63FF;
+            color: white;
+            padding: 10px 15px;
+            margin: 8px;
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            background: #222;
+            color: white;
+            padding: 25px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Nurin Syazwani</h1>
-    <h2>Software Engineering Student</h2>
+    <header>
+        <h1>Hi, I'm Nurin Syazwani 👋</h1>
+        <h2>Software Engineering Multimedia Development Student</h2>
+        <p>I create interactive digital experiences through software, multimedia, UI/UX, and AR development.</p>
+    </header>
 
-    <p>
-        I am a Software Engineering (Multimedia Systems Development) student at UKM.
-    </p>
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am a Software Engineering (Multimedia Systems Development) student at Universiti Kebangsaan Malaysia (UKM).
+            I am interested in building user-friendly applications, interactive systems, and multimedia-based solutions.
+        </p>
+    </section>
 
-    <h2>Projects</h2>
+    <section>
+        <h2>Projects</h2>
 
-    <h3>E-SMASH Indoor Sports Booking System</h3>
-    <p>Sports booking management system.</p>
+        <div class="project-card">
+            <h3>E-SMASH Indoor Sports Booking System</h3>
+            <p>
+                A sports facility booking system designed to help users reserve indoor sports courts more easily.
+            </p>
+            <p><strong>Focus:</strong> System Design, Booking Workflow, UI/UX</p>
+        </div>
 
-    <h3>Campus Cent</h3>
-    <p>Budget management app for university students.</p>
+        <div class="project-card">
+            <h3>Campus Cent</h3>
+            <p>
+                A student budget management app designed to help university students track expenses and manage spending habits.
+            </p>
+            <p><strong>Focus:</strong> Mobile App Concept, Finance Tracking, UI/UX</p>
+        </div>
 
-    <h3>Eco-Rangers AR</h3>
-    <p>AR educational application using Unity.</p>
+        <div class="project-card">
+            <h3>Eco-Rangers AR</h3>
+            <p>
+                An AR educational application using Unity to create interactive learning experiences for children.
+            </p>
+            <p><strong>Focus:</strong> AR Development, Unity, Multimedia Learning</p>
+        </div>
+    </section>
 
-    <h2>Skills</h2>
+    <section>
+        <h2>Skills</h2>
 
-    <ul>
-        <li>Java</li>
-        <li>Python</li>
-        <li>Unity</li>
-        <li>UI/UX Design</li>
-    </ul>
+        <div class="skills">
+            <span>Java</span>
+            <span>Python</span>
+            <span>Unity</span>
+            <span>UI/UX Design</span>
+            <span>HTML</span>
+            <span>CSS</span>
+        </div>
+    </section>
 
-    <h2>Contact</h2>
+    <section>
+        <h2>Contact</h2>
+        <p>Email: your@email.com</p>
+        <p>GitHub: github.com/yourusername</p>
+        <p>LinkedIn: linkedin.com/in/yourusername</p>
+    </section>
 
-    <p>Email: your@email.com</p>
+    <footer>
+        <p>© 2026 Nurin Syazwani | Software Engineering Portfolio</p>
+    </footer>
 
 </body>
 </html>
