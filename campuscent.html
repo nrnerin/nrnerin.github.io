@@ -6,6 +6,10 @@
 
     <style>
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -14,34 +18,36 @@
         }
 
         .hero {
-            padding: 80px 10%;
+            padding: 100px 10%;
             background: linear-gradient(135deg, #ffb6d9, #8c7bff);
         }
 
         .hero h1 {
-            font-size: 55px;
+            font-size: 60px;
             margin: 0;
         }
 
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
         .content {
-            padding: 60px 10%;
+            padding: 70px 10%;
             line-height: 1.8;
         }
 
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 70px;
         }
 
-        .image-box {
-            width: 100%;
-            height: 300px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ccc;
-            margin-top: 20px;
+        h2 {
+            color: #ffb6d9;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #d6d6e7;
         }
 
         .tag {
@@ -51,11 +57,57 @@
             color: black;
             border-radius: 20px;
             margin-right: 10px;
+            margin-top: 10px;
+            font-weight: bold;
         }
 
-        a {
-            color: #ffb6d9;
+        .gallery {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .gallery img {
+            width: 230px;
+            border-radius: 35px;
+            border: 8px solid #222;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-box {
+            background: rgba(255,255,255,0.08);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        ul {
+            color: #d6d6e7;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 20px;
+            background: #ffb6d9;
+            color: black;
             text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: white;
         }
 
     </style>
@@ -72,52 +124,127 @@
     <div class="content">
 
         <div class="section">
+
             <h2>About the Project</h2>
 
             <p>
                 Campus Cent is a budgeting application designed to help university
-                students track their expenses and manage their spending habits more efficiently.
+                students manage their expenses, savings, and spending habits more effectively.
             </p>
+
         </div>
 
         <div class="section">
+
             <h2>Problem</h2>
 
             <p>
-                Many students struggle to monitor their daily expenses and savings,
-                leading to poor financial management.
+                Many university students struggle with financial management and often
+                overspend due to lack of budgeting awareness and tracking tools.
             </p>
+
         </div>
 
         <div class="section">
+
             <h2>Solution</h2>
 
             <p>
-                Campus Cent provides an easy-to-use interface for students to record expenses,
-                categorize spending, and manage personal budgets.
+                Campus Cent provides an easy-to-use budgeting platform that allows students
+                to record expenses, monitor spending categories, and plan monthly budgets
+                in a more organized way.
             </p>
+
         </div>
 
         <div class="section">
+
+            <h2>Features</h2>
+
+            <div class="feature-box">
+
+                <ul>
+                    <li>Expense Tracking</li>
+                    <li>Budget Planning</li>
+                    <li>Student Discount</li>
+                    <li>Money History</li>
+                    <li>Student Card Display</li>
+                    <li>Bill Reminder</li>
+                    <li>Financial Health Dashboard</li>
+                    <li>Simple Student-Friendly UI</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
             <h2>Technologies Used</h2>
 
-            <span class="tag">Figma</span>
+            <span class="tag">Canva</span>
             <span class="tag">Firebase</span>
             <span class="tag">Android Studio</span>
             <span class="tag">UI/UX</span>
+            <span class="tag">Mobile Design</span>
+
         </div>
 
         <div class="section">
+
             <h2>Project Preview</h2>
 
-            <div class="image-box">
-                Add screenshots here
+            <div class="gallery">
+
+                <img src="images/campuscent/login.png">
+                <img src="images/campuscent/mainmenu.png">
+                <img src="images/campuscent/expenses.png">
+                <img src="images/campuscent/discount.png">
+                <img src="images/campuscent/datainput.png">
+                <img src="images/campuscent/expensetracker.png">
+                <img src="images/campuscent/financialhealth.png">
+                <img src="images/campuscent/history.png">
+                <img src="images/campuscent/register.png">
+                <img src="images/campuscent/reminder.png">
+                <img src="images/campuscent/saving.png">
+                <img src="images/campuscent/studentcard.png">
+
             </div>
+
         </div>
 
         <div class="section">
-            <a href="index.html">← Back to Portfolio</a>
+
+            <h2>My Role</h2>
+
+            <p>
+                Responsible for UI/UX planning, system concept design,
+                budgeting workflow ideas, application development and overall project presentation.
+                My groupmates and I developed the application using;
+                - Canva for the design.
+                - Android Studio for the development.
+                - Firebase for the database.
+                
+            </p>
+
         </div>
+
+        <div class="section">
+
+            <h2>Lessons Learned</h2>
+
+            <p>
+                Through this project, I improved my understanding of
+                user-centered design, application workflow planning,
+                and designing systems focused on solving real student problems.
+                My Android Studio and Firebase skills improved as well.
+            </p>
+
+        </div>
+
+        <a href="index.html" class="back-button">
+            ← Back to Portfolio
+        </a>
 
     </div>
 
